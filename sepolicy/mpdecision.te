@@ -1,1 +1,4 @@
-allow mpdecision socket_device:sock_file setattr;
+allow mpdecision socket_device:sock_file { unlink setattr write };
+allow mpdecision system_data_file:dir { write remove_name add_name };
+allow mpdecision system_data_file:sock_file { write create unlink setattr };
+

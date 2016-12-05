@@ -2,6 +2,8 @@ allow init kernel:file write;
 
 allow init debugfs:dir mounton;
 
+allow init fm_radio_device:chr_file write;
+
 allow init self:process { setcurrent execmem };
 
 allow init wpa_socket:unix_dgram_socket { bind create };
