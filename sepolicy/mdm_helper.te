@@ -1,2 +1,7 @@
+#============= mdm_helper ==============
+allow mdm_helper cache_file:dir { write remove_name add_name };
+allow mdm_helper cache_file:file { write create unlink open setattr };
+allow mdm_helper toolbox_exec:file { read execute open getattr execute_no_trans };
+
 # Connect to tad
 unix_socket_connect(mdm_helper, tad, tad)

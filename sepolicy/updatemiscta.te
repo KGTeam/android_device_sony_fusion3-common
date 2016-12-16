@@ -3,6 +3,12 @@ type updatemiscta_exec, exec_type, file_type;
 
 init_daemon_domain(updatemiscta)
 
+#============= updatemiscta ==============
+allow updatemiscta self:capability dac_override;
+allow updatemiscta tad:unix_stream_socket connectto;
+allow updatemiscta tad_socket:sock_file write;
+allow updatemiscta updatemiscta_prop:file { read getattr open };
+
 unix_socket_connect(updatemiscta, property, init)
 
 #Connect to tad

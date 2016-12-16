@@ -3,5 +3,11 @@ type illumination_exec, exec_type, file_type;
 
 init_daemon_domain(illumination)
 
+#============= illumination ==============
+allow illumination self:capability dac_override;
+
 # Wakelocks
 wakelock_use(illumination)
+
+allow illumination sysfs:file { read write open };
+allow illumination uhid_device:chr_file { write ioctl open };

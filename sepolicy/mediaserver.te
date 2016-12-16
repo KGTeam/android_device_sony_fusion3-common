@@ -1,3 +1,11 @@
+#============= mediaserver ==============
+allow mediaserver audio_device:chr_file { read write ioctl open };
+allow mediaserver camera_socket:dir { write add_name };
+allow mediaserver camera_socket:file { write read create open getattr };
+allow mediaserver sysfs:file write;
+allow mediaserver system_file:file execmod;
+allow mediaserver system_server:unix_stream_socket { read write };
+
 # ALS
 allow mediaserver input_device:chr_file r_file_perms;
 unix_socket_connect(mediaserver, illumination, illumination)

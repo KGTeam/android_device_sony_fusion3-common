@@ -6,3 +6,10 @@ init_daemon_domain(macaddrsetup)
 
 # Connect to /dev/socket/tad
 unix_socket_connect(macaddrsetup, tad, tad)
+
+#============= macaddrsetup ==============
+allow macaddrsetup bluetooth_data_file:dir { write add_name };
+allow macaddrsetup bluetooth_data_file:file { write create open getattr setattr };
+allow macaddrsetup self:capability { fowner chown fsetid dac_override };
+allow macaddrsetup sysfs_wlanmac:file { write getattr open };
+allow macaddrsetup sysfs_wlanserial:file { write getattr open };

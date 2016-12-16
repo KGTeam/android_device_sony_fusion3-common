@@ -1,2 +1,13 @@
+allow system_server gpu_device:chr_file rw_file_perms;		
+
 # Connect to illumination service
 unix_socket_connect(system_server, illumination, illumination)
+
+#============= system_server ==============
+allow system_server kernel:process setsched;
+allow system_server mdm_device:chr_file { read getattr open ioctl };
+allow system_server sysfs_touchpanel:file { write open };
+allow system_server unlabeled:file unlink;
+
+# Permissions for gpuclk
+allow system_server sysfs_thermal:file r_file_perms;
