@@ -72,6 +72,7 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
 
 # FM Radio
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
+BOARD_HAVE_QCOM_FM := true
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
