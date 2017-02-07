@@ -78,6 +78,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     Gello
 
+ifeq ($(WITH_TWRP),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
+endif
+
 # Lights wrapper
 PRODUCT_PACKAGES += \
     lights.msm8960 \
